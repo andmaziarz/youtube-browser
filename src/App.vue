@@ -1,16 +1,24 @@
 <template>
-    <div>
+    <div class="container">
         <SearchBar @termChange="onTermChange"></SearchBar>
+        <VideoList v-bind:videos="videos"></VideoList>
     </div>
 </template>
 <script>
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
+import VideoList from './components/VideoList';
 
 export default {
     name: 'App',
     components: {
-        SearchBar
+        SearchBar,
+        VideoList
+    },
+    data() {
+        return {
+            videos: []
+        }
     },
     methods: {
         onTermChange(searchTerm){
@@ -21,7 +29,10 @@ export default {
                     part: 'snippet',
                     q: searchTerm
                 }
-            }).then(response => console.log(response))
+            }).then(response => {
+                this.videos = response.data.items;
+            }
+            )
         }
 
     }

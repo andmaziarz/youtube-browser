@@ -1,20 +1,32 @@
 <template>
     <div>
-        <input @input="onInput"/>
+        <input v-model="inputSearch"/>
+        <button @click="onSearch">Search</button>
     </div>    
 </template>
 
 <script>
 export default {
     name: 'SearchBar',
+    data() {
+        return {
+            inputSearch: ''
+        }
+    },
     methods: {
-        onInput(event){
-            this.$emit('termChange', event.target.value)
+        onSearch(){
+            this.$emit('termChange', this.inputSearch)
         }
     }
 };
 </script>
 
-<style>
-
+<style scoped>
+    input {
+        width: 50%;
+    }
+    div {
+        text-align: center;
+        margin: 20px;
+    }
 </style>
