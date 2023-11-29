@@ -1,6 +1,14 @@
 # youtube-browser
 
-## Project setup
+Youtube browser application powered by Vue.js and YouTube Data API v3 which provide basic search function
+
+![App preview 1](readme/ps1.png)
+
+![App preview 2](readme/ps2.png)
+
+---
+
+## Setup
 ```
 npm install
 ```
@@ -15,10 +23,3 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

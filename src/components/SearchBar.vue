@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <input v-model="inputSearch"/>
-        <button @click="onSearch">Search</button>
+    <div class="input-group w-50 ml-auto p-2">
+        <input v-model="inputSearch" class="form-control rounded " placeholder="Search" />
+        <button @click="onSearch" class="btn btn-outline-secondary"><i class="bi bi-search"></i></button>
     </div>    
 </template>
 
@@ -15,18 +15,13 @@ export default {
     },
     methods: {
         onSearch(){
-            this.$emit('termChange', this.inputSearch)
+            this.$emit('termSearch', this.inputSearch)
         }
     }
 };
 </script>
-
 <style scoped>
-    input {
-        width: 50%;
-    }
-    div {
-        text-align: center;
-        margin: 20px;
+    div{
+        margin: 20px 0 20px 0;
     }
 </style>
